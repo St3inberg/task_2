@@ -6,7 +6,7 @@ header ul {
   position: fixed;
   overflow: hidden;
   top: 0px;
-  background-color: #005b63;
+  background-color: #000000;
 }
 
 body {
@@ -37,4 +37,25 @@ footer li {
 html {
   font-family: sans-serif;
   background-color: rgb(255, 255, 255);
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 18px 24px;
+  text-decoration: none;
+}
+
+footer li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 18px 24px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgb(131, 197, 190);
 }
