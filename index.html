@@ -2,18 +2,23 @@
 <html>
   <head>
     <title>Østfold university college 30 years!</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
     <style>
-        #mapContainer{
-            width: 800px; 
-            height: 600px;
-        }
+      #mapContainer {
+        width: 800px;
+        height: 600px;
+      }
     </style>
     <link rel="stylesheet" type="text/css" href="kom.css" />
   </head>
@@ -28,22 +33,23 @@
       <section id="mapContainer"></section>
 
       <script>
-          const centerlat = 59.1294
-          const centerlong = 11.23537
-  
-          let mapMain = L.map('mapContainer',{
-              center: [centerlat, centerlong],
-              zoom: 13
-  
-          })
-  
-          L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png',{
-              attribution: '<a href="https://openstreetmap.org/copyright"> Open Street Map </a>'
-          }).addTo(mapMain)
-  
-          L.marker([centerlat, centerlong]).addTo(mapMain)
-      </script>
+        const centerlat = 59.1294;
+        const centerlong = 11.23537;
 
+        let mapMain = L.map("mapContainer", {
+          center: [centerlat, centerlong],
+          zoom: 13,
+        });
+
+        L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '<a href="https://openstreetmap.org/copyright"> Open Street Map </a>',
+        }).addTo(mapMain);
+
+        L.marker([centerlat, centerlong]).addTo(mapMain)
+          .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+          .openPopup();
+      </script>
     </main>
 
     <!-- <footer>
