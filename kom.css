@@ -1,0 +1,40 @@
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 0px;
+  background-color: #005b63;
+}
+
+body {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  justify-content: right;
+  align-items: right;
+  bottom: 0;
+  width: 100%;
+
+  overflow: hidden;
+  background-color: #005b63;
+}
+
+footer li {
+  float: left;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  font-family: sans-serif;
+  background-color: rgb(255, 255, 255);
+}
