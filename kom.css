@@ -10,6 +10,13 @@ header ul {
 }
 
 body {
+  height: 100%;
+  margin: 54px;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -58,4 +65,8 @@ footer li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: rgb(131, 197, 190);
+}
+
+#mapContainer {
+  width: 100%; /* Adjust width as needed */
 }

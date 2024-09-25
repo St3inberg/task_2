@@ -30,7 +30,9 @@
     </header>
 
     <main>
-      <section id="mapContainer"></section>
+      <div style="padding-left: 15%; padding-right: 15%; padding-bottom: 40px">
+        <section id="mapContainer"></section>
+      </div>
 
       <script>
         const centerlat = 59.1294;
@@ -46,10 +48,45 @@
             '<a href="https://openstreetmap.org/copyright"> Open Street Map </a>',
         }).addTo(mapMain);
 
-        L.marker([centerlat, centerlong]).addTo(mapMain)
-          .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+        L.marker([centerlat, centerlong])
+          .addTo(mapMain)
+          .bindPopup('<a href="#" id="scroll-link">Click me to scroll</a>')
           .openPopup();
+
+        document.addEventListener("click", function (event) {
+          if (event.target && event.target.id === "scroll-link") {
+            event.preventDefault(); // Prevent default anchor link behavior
+
+            // Scroll to the target section smoothly
+            document.getElementById("target").scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
       </script>
+
+      <div
+        id="target"
+        style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))"
+      >
+        <img
+          style="place-self: center"
+          src="image.png"
+          alt="Description of image"
+          width="500"
+        />
+        <p style="">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </div>
     </main>
 
     <!-- <footer>
