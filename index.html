@@ -8,7 +8,7 @@
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
+
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -48,44 +48,83 @@
             '<a href="https://openstreetmap.org/copyright"> Open Street Map </a>',
         }).addTo(mapMain);
 
-        L.marker([centerlat, centerlong])
-          .addTo(mapMain)
-          .bindPopup('<a href="#" id="scroll-link">Click me to scroll</a>')
-          .openPopup();
+        function addMarker(map, lat, long, popupContent, targetId = null) {
+          // Add a marker at the given latitude and longitude
+          const marker = L.marker([lat, long]).addTo(map);
 
-        document.addEventListener("click", function (event) {
-          if (event.target && event.target.id === "scroll-link") {
-            event.preventDefault(); // Prevent default anchor link behavior
+          // Bind popup content to the marker
+          marker.bindPopup(popupContent).openPopup();
 
-            // Scroll to the target section smoothly
-            document.getElementById("target").scrollIntoView({
-              behavior: "smooth",
+          // If targetId is provided, add event listener for scrolling
+          if (targetId) {
+            document.addEventListener("click", function (event) {
+              if (event.target && event.target.id === "scroll-link") {
+                event.preventDefault(); // Prevent default anchor link behavior
+
+                // Scroll to the target section smoothly
+                document.getElementById(targetId).scrollIntoView({
+                  behavior: "smooth",
+                });
+              }
             });
           }
-        });
-      </script>
+        }
 
-      <div
-        id="target"
-        style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))"
-      >
-        <img
-          style="place-self: center"
-          src="image.png"
-          alt="Description of image"
-          width="500"
-        />
-        <p style="">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
-        </p>
+        addMarker(
+          mapMain,
+          59.1294,
+          11.23537,
+          '<a href="#" id="scroll-link">Click me to scroll</a>',
+          "target2"
+        );
+        addMarker(
+          mapMain,
+          59.1494,
+          11.23537,
+          '<p>additional info</p>  <a href="#" id="scroll-link">idk click or something </a>',
+          "target"
+        );
+      </script>
+      <div style="display: grid; gap: 60px">
+        <div id="target" class="gridContainer">
+          <img
+            style="place-self: center"
+            src="idk.png"
+            alt="Description of image"
+            width="400"
+          />
+          <p class="gridClass">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+
+        <div id="target2" class="gridContainer">
+          <img
+            style="place-self: center"
+            src="image.png"
+            alt="Description of image"
+            width="400"
+          />
+          <p class="gridClass">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </p>
+        </div>
       </div>
     </main>
 
