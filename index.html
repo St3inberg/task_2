@@ -54,34 +54,21 @@
 
           // Bind popup content to the marker
           marker.bindPopup(popupContent).openPopup();
-
-          // If targetId is provided, add event listener for scrolling
-          if (targetId) {
-            document.addEventListener("click", function (event) {
-              if (event.target && event.target.id === "scroll-link") {
-                event.preventDefault(); // Prevent default anchor link behavior
-
-                // Scroll to the target section smoothly
-                document.getElementById(targetId).scrollIntoView({
-                  behavior: "smooth",
-                });
-              }
-            });
-          }
+          
         }
 
         addMarker(
           mapMain,
           59.1294,
           11.23537,
-          '<a href="#" id="scroll-link">Click me to scroll</a>',
+          '<a href="#target2" id="scroll-link">Click me to scroll</a>',
           "target2"
         );
         addMarker(
           mapMain,
           59.1494,
           11.23537,
-          '<p>additional info</p>  <a href="#" id="scroll-link">idk click or something </a>',
+          '<p>additional info</p>  <a href="#target" id="scroll-link">idk click or something </a>',
           "target"
         );
       </script>

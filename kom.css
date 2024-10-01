@@ -9,6 +9,10 @@ header ul {
   background-color: #000000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100%;
   margin: 54px;
