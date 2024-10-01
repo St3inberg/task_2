@@ -70,3 +70,21 @@ li a:hover {
 #mapContainer {
   width: 100%; /* Adjust width as needed */
 }
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 40% auto;
+  width: 80%;
+  margin: auto;
+  background-color: rgba(251, 234, 255, 0.5);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+}
+
+.gridClass {
+  font-size: 25px;
+  align-content: center;
+}
