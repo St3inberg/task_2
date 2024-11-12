@@ -139,14 +139,15 @@
         var idk = [],
           x = -1;
         idk[0] = "Images/abandoned building/idk.png";
-        idk[1] = "Images/industrial building/rygge.jpg";
-        idk[2] = "Images/abandoned building tistedal/tistedal.jpg";
+        idk[1] = "Images/abandoned building/idk1.png";
+        idk[2] = "Images/abandoned building/idk2.png";
       </script>
 
       <div style="display: grid; gap: 60px" onload="startTimer()">
         <div id="target" class="gridContainer">
           <img
             id="img"
+            loading="lazy"
             style="place-self: center"
             src="Images/abandoned building/idk.png"
             alt="Description of image"
@@ -164,21 +165,41 @@
             maintenance since it was damaged in two fires in 2017. (Some words
             from the neighbours here if I can find some interview objects).
           </p>
+          
         </div>
 
+        <script type="text/javascript">
+
+          var tistedal = [],
+            x = -1;
+          tistedal[0] = "Images/abandoned building tistedal/tistedal.jpg";
+          tistedal[1] = "Images/abandoned building tistedal/tistedal1.png";
+          tistedal[2] = "Images/abandoned building tistedal/tistedal2.png";
+        </script>
+
         <div id="target9" class="gridContainer">
+          
           <img
+            id="tistedal"
             style="place-self: center"
+            loading="lazy"
             src="Images/abandoned building tistedal/tistedal.jpg"
             alt="Description of image"
             width="600"
           />
+          <button type="button" onclick="displayPreviousImage('tistedal',tistedal)">
+            Previous
+          </button>
+          <button type="button" onclick="displayNextImage('tistedal',tistedal)">
+            Next
+          </button>
           <p class="gridClass">
             A little further east in Halden, in Tistedal, another once great
             building is standing. In Torpedalsveien 17, a big house is standing
             with clear signs of decay. The big windows are full of old boxes and
             graffiti, while weed has filled the sidewalk.
           </p>
+          
         </div>
 
         <div id="target5" class="gridContainer">
